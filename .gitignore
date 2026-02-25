@@ -1,0 +1,65 @@
+# =====================
+# Python
+# =====================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# compiled / build
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# virtual environment (pipenv / venv)
+.venv/
+venv/
+env/
+ENV/
+
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# mypy / lint
+.mypy_cache/
+.ruff_cache/
+.pyre/
+
+# =====================
+# Pipenv
+# =====================
+# lock file biasanya DI-COMMIT (penting untuk reproducible env)
+# jadi JANGAN ignore Pipfile.lock
+
+# tapi kalau kamu mau project library → ignore
+# Pipfile.lock
+
+# =====================
+# Flask
+# =====================
+instance/
+.webassets-cache
+
+# dotenv (secret config)
+.env
+.env.*
+
+# sqlite database
+*.db
+*.sqlite3
+
+# =====================
+# VSCode
+# =====================
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+
+# =====================
+# OS junk
+# =====================
+.DS_Store
+Thumbs.db
