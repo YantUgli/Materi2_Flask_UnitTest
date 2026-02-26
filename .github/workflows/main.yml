@@ -1,0 +1,36 @@
+name: Demo blog app
+
+# set trigger
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]  
+
+
+# step by step job
+
+jobs:
+  run-pytest:
+    name: run pytest
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout branch
+        uses: actions/checkout@v
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.12
+      - name: Install pipenv
+        uses: dschep/install-pipenv-action@v1
+        with:
+          version: 2023.10.24
+      - name: Install Depedencies
+        # working-directory: ./src
+        run: |
+          pipenv install --system --deploy
+      - name: Test with pytest
+        id: pytest
+        # working-directory: ./src
+        run: |
+          pytest
